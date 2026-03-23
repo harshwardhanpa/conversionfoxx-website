@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #05070A;
+  --color-brand-bg-secondary: #0B0F1A;
+  --color-brand-accent: #FF6A3D;
+  --color-brand-secondary: #FF6A3D;
+  --color-brand-text: #E6EAF0;
+  --color-brand-muted: #9AA4B2;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text font-sans selection:bg-brand-accent/30;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-card-hover {
+    @apply hover:bg-white/10 hover:border-brand-accent/30 hover:shadow-[0_0_30px_-10px_rgba(255,106,61,0.4)];
+  }
+
+  .neon-glow-orange {
+    text-shadow: 0 0 10px rgba(255, 106, 61, 0.6);
+  }
+
+  .horizon-glow {
+    background: radial-gradient(ellipse at bottom, rgba(255, 106, 61, 0.15) 0%, transparent 70%);
+  }
+
+  .nav-link-glow {
+    @apply relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-accent after:shadow-[0_0_10px_rgba(255,106,61,0.8)] after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
