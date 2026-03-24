@@ -40,29 +40,68 @@ export const CustomFoxIcon = ({ className }: { className?: string }) => (
 
 export const DigitalGlobe = ({ className }: { className?: string }) => (
   <div className={cn("relative", className)}>
+    {/* Outer rings */}
     <motion.div
       animate={{ rotate: 360 }}
+      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      className="absolute inset-[-5%] rounded-full border border-brand-accent/20 shadow-[0_0_30px_rgba(255,106,61,0.1)]"
+    />
+    <motion.div
+      animate={{ rotate: -360 }}
+      transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+      className="absolute inset-[-15%] rounded-full border border-dashed border-brand-accent/10"
+    />
+    <motion.div
+      animate={{ rotate: 360, scale: [1, 1.05, 1] }}
       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      className="w-full h-full rounded-full border border-brand-accent/20 relative"
+      className="absolute inset-[-25%] rounded-full border border-white/5"
+    />
+    
+    {/* Core sphere */}
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      className="w-full h-full rounded-full border border-brand-accent/30 relative overflow-hidden bg-brand-accent/5 backdrop-blur-[2px]"
     >
-      <div className="absolute inset-0 rounded-full border border-dashed border-brand-accent/10 scale-110" />
-      <div className="absolute inset-0 rounded-full border border-brand-accent/5 scale-125" />
-      
       {/* Grid lines */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full h-[1px] bg-brand-accent/10" />
+        <div className="w-full h-[1px] bg-brand-accent/20" />
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[1px] h-full bg-brand-accent/10" />
+        <div className="w-[1px] h-full bg-brand-accent/20" />
       </div>
       
+      {/* Lat/Long lines */}
+      <div className="absolute inset-0 rounded-full border border-brand-accent/10 scale-x-50" />
+      <div className="absolute inset-0 rounded-full border border-brand-accent/10 scale-y-50" />
+      <div className="absolute inset-0 rounded-full border border-brand-accent/5 scale-x-75" />
+      <div className="absolute inset-0 rounded-full border border-brand-accent/5 scale-y-75" />
+      
       {/* Glowing points */}
-      <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-brand-accent rounded-full shadow-[0_0_10px_#FF6A3D]" />
-      <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-brand-accent rounded-full shadow-[0_0_10px_#FF6A3D]" />
-      <div className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-brand-accent rounded-full shadow-[0_0_10px_#FF6A3D]" />
+      <motion.div 
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 left-1/4 w-2 h-2 bg-brand-accent rounded-full shadow-[0_0_20px_#FF6A3D]" 
+      />
+      <motion.div 
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/2 right-1/4 w-2 h-2 bg-brand-accent rounded-full shadow-[0_0_20px_#FF6A3D]" 
+      />
+      <motion.div 
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-brand-accent rounded-full shadow-[0_0_20px_#FF6A3D]" 
+      />
+      <motion.div 
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-brand-accent rounded-full shadow-[0_0_15px_#FF6A3D]" 
+      />
     </motion.div>
     
     {/* Inner glow */}
-    <div className="absolute inset-0 rounded-full bg-brand-accent/5 blur-2xl -z-10" />
+    <div className="absolute inset-0 rounded-full bg-brand-accent/20 blur-[120px] -z-10 animate-pulse" />
+    <div className="absolute inset-[-50%] rounded-full bg-brand-accent/5 blur-[150px] -z-20" />
   </div>
 );

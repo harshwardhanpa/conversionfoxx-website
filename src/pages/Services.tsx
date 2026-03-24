@@ -81,42 +81,45 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32 mb-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-48 mb-32">
         {servicesDetail.map((service, index) => (
           <div 
             key={service.id} 
             id={service.id}
-            className={`flex flex-col lg:flex-row gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+            className={`flex flex-col lg:flex-row gap-24 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
           >
             <div className="flex-1">
-              <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center mb-8 text-brand-accent">
-                <service.icon className="w-8 h-8" />
+              <div className="w-20 h-20 rounded-3xl glass-card glass-card-hover flex items-center justify-center mb-10 text-brand-accent border-brand-accent/20">
+                <service.icon className="w-10 h-10" />
               </div>
-              <h2 className="text-4xl font-display font-bold mb-6">{service.title}</h2>
-              <p className="text-xl text-brand-muted mb-10 leading-relaxed">
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">{service.title}</h2>
+              <p className="text-xl text-brand-muted mb-12 leading-relaxed font-light">
                 {service.description}
               </p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-brand-text">
-                    <CheckCircle2 className="w-5 h-5 text-brand-accent" />
-                    <span>{feature}</span>
+                  <li key={feature} className="flex items-center gap-4 text-brand-text group/item">
+                    <div className="w-6 h-6 rounded-full bg-brand-accent/10 flex items-center justify-center group-hover/item:bg-brand-accent/20 transition-colors">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent" />
+                    </div>
+                    <span className="font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
               <Link 
                 to={`/services/${service.id}`}
-                className="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-4 transition-all"
+                className="group inline-flex items-center gap-3 text-brand-accent font-bold text-lg hover:gap-5 transition-all"
               >
-                View System Details <ArrowRight className="w-5 h-5" />
+                View System Details <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
             <div className="flex-1 w-full">
-              <div className="aspect-video glass-card relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-transparent opacity-50" />
+              <div className="aspect-video glass-card glass-card-hover relative overflow-hidden group border-white/5">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <service.icon className="w-32 h-32 text-brand-accent opacity-20 group-hover:scale-110 transition-transform duration-500" />
+                  <service.icon className="w-40 h-40 text-brand-accent opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-700" />
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-brand-bg to-transparent opacity-60" />
               </div>
             </div>
           </div>

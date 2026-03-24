@@ -45,13 +45,13 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 glass-card text-center"
+              className="p-8 glass-card glass-card-hover text-center group"
             >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-8">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-8 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,106,61,0.1)]">
                 <reason.icon className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-display font-bold mb-4">{reason.title}</h4>
-              <p className="text-brand-muted text-sm leading-relaxed">{reason.description}</p>
+              <h4 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-accent transition-colors">{reason.title}</h4>
+              <p className="text-brand-muted text-sm leading-relaxed group-hover:text-brand-text transition-colors">{reason.description}</p>
             </motion.div>
           ))}
         </div>

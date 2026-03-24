@@ -45,21 +45,21 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative z-10 text-center group"
+              className="relative z-10 p-8 glass-card glass-card-hover text-center group"
             >
               <div 
-                className="w-24 h-24 mx-auto rounded-full glass-card flex items-center justify-center mb-8 relative group-hover:shadow-[0_0_40px_-10px_rgba(255,106,61,0.3)] transition-all border-brand-accent/20"
+                className="w-20 h-20 mx-auto rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mb-8 relative group-hover:scale-110 transition-all shadow-[0_0_20px_rgba(255,106,61,0.1)]"
               >
-                <step.icon className="w-10 h-10 text-brand-accent" />
+                <step.icon className="w-8 h-8 text-brand-accent" />
                 
                 {/* Step Number */}
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-brand-bg border border-brand-accent/20 flex items-center justify-center text-xs font-bold text-brand-accent">
-                  0{index + 1}
+                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-brand-bg border border-brand-accent/20 flex items-center justify-center text-xs font-bold text-brand-accent shadow-lg">
+                  {index + 1}
                 </div>
               </div>
 
-              <h3 className="text-2xl font-display font-bold mb-4">{step.title}</h3>
-              <p className="text-brand-muted text-sm px-4 leading-relaxed">{step.description}</p>
+              <h3 className="text-xl font-display font-bold mb-4 group-hover:text-brand-accent transition-colors">{step.title}</h3>
+              <p className="text-brand-muted text-sm leading-relaxed group-hover:text-brand-text transition-colors">{step.description}</p>
             </motion.div>
           ))}
         </div>

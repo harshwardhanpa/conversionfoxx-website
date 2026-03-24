@@ -56,18 +56,18 @@ export default function GrowthSystem() {
                 className="relative z-10 text-center group"
               >
                 <div 
-                  className="w-24 h-24 mx-auto rounded-full glass-card flex items-center justify-center mb-8 relative group-hover:shadow-[0_0_40px_-10px_rgba(255,106,61,0.3)] transition-all border-brand-accent/20"
+                  className="w-24 h-24 mx-auto rounded-full glass-card glass-card-hover flex items-center justify-center mb-8 relative group-hover:scale-105 transition-all border-brand-accent/20"
                 >
-                  <step.icon className="w-10 h-10 text-brand-accent" />
+                  <step.icon className="w-10 h-10 text-brand-accent group-hover:scale-110 transition-transform" />
                   
                   {/* Step Number */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-brand-bg border border-brand-accent/20 flex items-center justify-center text-xs font-bold text-brand-accent">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-brand-bg border border-brand-accent/20 flex items-center justify-center text-xs font-bold text-brand-accent shadow-[0_0_15px_rgba(255,106,61,0.2)]">
                     0{index + 1}
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-display font-bold mb-4">{step.title}</h3>
-                <p className="text-brand-muted text-sm px-4 leading-relaxed">{step.description}</p>
+                <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-accent transition-colors">{step.title}</h3>
+                <p className="text-brand-muted text-sm px-4 leading-relaxed group-hover:text-brand-text transition-colors">{step.description}</p>
 
                 {index < steps.length - 1 && (
                   <div className="hidden lg:flex absolute top-1/2 -right-6 -translate-y-1/2 text-brand-accent/20">

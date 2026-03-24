@@ -10,6 +10,13 @@
 
   --font-display: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;
+
+  --animate-gradient-x: gradient-x 15s ease infinite;
+
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 }
 
 @layer base {
@@ -36,7 +43,11 @@
   }
 
   .horizon-glow {
-    background: radial-gradient(ellipse at bottom, rgba(255, 106, 61, 0.15) 0%, transparent 70%);
+    background: radial-gradient(ellipse at bottom, rgba(255, 106, 61, 0.25) 0%, transparent 80%);
+  }
+
+  .space-gradient {
+    background: radial-gradient(circle at 50% -20%, rgba(255, 106, 61, 0.05) 0%, transparent 60%);
   }
 
   .nav-link-glow {

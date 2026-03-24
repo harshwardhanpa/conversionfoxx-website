@@ -37,52 +37,58 @@ export default function About() {
           </div>
 
           <div className="relative">
-            <div className="aspect-square glass-card p-12 flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,106,61,0.1),transparent_70%)]" />
+            <div className="aspect-square glass-card glass-card-hover p-12 flex flex-col justify-center relative overflow-hidden border-brand-accent/20">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,106,61,0.1),transparent_70%)] animate-pulse" />
               <div className="space-y-12 relative z-10">
-                <div className="flex gap-6">
-                  <Users className="w-10 h-10 text-brand-accent" />
+                <div className="flex gap-6 group">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform border border-brand-accent/20">
+                    <Users className="w-7 h-7" />
+                  </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Expert-Led</h4>
-                    <p className="text-brand-muted">No junior account managers. You work directly with systems architects.</p>
+                    <h4 className="text-xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Expert-Led</h4>
+                    <p className="text-brand-muted leading-relaxed">No junior account managers. You work directly with systems architects.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <Target className="w-10 h-10 text-brand-accent" />
+                <div className="flex gap-6 group">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform border border-brand-accent/20">
+                    <Target className="w-7 h-7" />
+                  </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">ROI-First</h4>
-                    <p className="text-brand-muted">Every system we build is measured by its impact on your bottom line.</p>
+                    <h4 className="text-xl font-bold mb-2 group-hover:text-brand-accent transition-colors">ROI-First</h4>
+                    <p className="text-brand-muted leading-relaxed">Every system we build is measured by its impact on your bottom line.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <Rocket className="w-10 h-10 text-brand-accent" />
+                <div className="flex gap-6 group">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform border border-brand-accent/20">
+                    <Rocket className="w-7 h-7" />
+                  </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Built to Scale</h4>
-                    <p className="text-brand-muted">We build for where you want to be in 2 years, not just where you are today.</p>
+                    <h4 className="text-xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Built to Scale</h4>
+                    <p className="text-brand-muted leading-relaxed">We build for where you want to be in 2 years, not just where you are today.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-accent/20 blur-[80px] rounded-full -z-10" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-accent/20 blur-[80px] rounded-full -z-10 animate-pulse" />
           </div>
         </div>
       </div>
 
-      <section className="py-32 bg-brand-bg-secondary/50">
+      <section className="py-40 bg-brand-bg-secondary/50 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-display font-bold mb-16">Our Core Philosophy</h2>
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-20">Our Core Philosophy</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="p-8 glass-card">
-              <h3 className="text-2xl font-display font-bold mb-4">Diagnosis Before Prescription</h3>
-              <p className="text-brand-muted">We never suggest a solution until we've audited the entire engine. We solve root causes, not symptoms.</p>
+            <div className="p-10 glass-card glass-card-hover border-white/5 text-left group">
+              <h3 className="text-2xl font-display font-bold mb-6 group-hover:text-brand-accent transition-colors">Diagnosis Before Prescription</h3>
+              <p className="text-brand-muted leading-relaxed">We never suggest a solution until we've audited the entire engine. We solve root causes, not symptoms.</p>
             </div>
-            <div className="p-8 glass-card">
-              <h3 className="text-2xl font-display font-bold mb-4">Data is the Only Truth</h3>
-              <p className="text-brand-muted">Opinions don't scale. We rely on rigorous tracking and statistical significance to drive decisions.</p>
+            <div className="p-10 glass-card glass-card-hover border-white/5 text-left group">
+              <h3 className="text-2xl font-display font-bold mb-6 group-hover:text-brand-accent transition-colors">Data is the Only Truth</h3>
+              <p className="text-brand-muted leading-relaxed">Opinions don't scale. We rely on rigorous tracking and statistical significance to drive decisions.</p>
             </div>
-            <div className="p-8 glass-card">
-              <h3 className="text-2xl font-display font-bold mb-4">Assets Over Expenses</h3>
-              <p className="text-brand-muted">Marketing spend is an expense. A revenue system is an asset that grows in value over time.</p>
+            <div className="p-10 glass-card glass-card-hover border-white/5 text-left group">
+              <h3 className="text-2xl font-display font-bold mb-6 group-hover:text-brand-accent transition-colors">Assets Over Expenses</h3>
+              <p className="text-brand-muted leading-relaxed">Marketing spend is an expense. A revenue system is an asset that grows in value over time.</p>
             </div>
           </div>
         </div>

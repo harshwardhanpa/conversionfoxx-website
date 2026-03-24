@@ -76,43 +76,44 @@ export default function ServiceDetail() {
           <ArrowLeft className="w-4 h-4" /> Back to Services
         </Link>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
-            <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center mb-8 text-brand-accent">
-              <service.icon className="w-8 h-8" />
+            <div className="w-20 h-20 rounded-3xl glass-card glass-card-hover flex items-center justify-center mb-10 text-brand-accent border-brand-accent/20">
+              <service.icon className="w-10 h-10" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">{service.title}</h1>
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-10 leading-tight">{service.title}</h1>
             
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4">The Problem</h3>
-                <p className="text-xl text-brand-muted leading-relaxed">{service.problem}</p>
+            <div className="space-y-16">
+              <div className="group">
+                <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-accent mb-6 group-hover:translate-x-2 transition-transform inline-block">The Problem</h3>
+                <p className="text-2xl text-brand-muted leading-relaxed font-light">{service.problem}</p>
               </div>
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4">The Solution</h3>
-                <p className="text-xl text-brand-text leading-relaxed">{service.solution}</p>
+              <div className="group">
+                <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-accent mb-6 group-hover:translate-x-2 transition-transform inline-block">The Solution</h3>
+                <p className="text-2xl text-brand-text leading-relaxed font-medium">{service.solution}</p>
               </div>
             </div>
           </div>
           
-          <div className="glass-card p-10 md:p-16">
-            <h3 className="text-2xl font-display font-bold mb-8">The Process</h3>
-            <div className="space-y-6">
+          <div className="glass-card glass-card-hover p-12 md:p-20 border-white/5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-[100px] rounded-full -z-10" />
+            <h3 className="text-3xl font-display font-bold mb-12">The Process</h3>
+            <div className="space-y-8">
               {service.process.map((step: string, index: number) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent text-xs font-bold flex-shrink-0">
+                <div key={index} className="flex items-start gap-6 group/step">
+                  <div className="w-10 h-10 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent text-sm font-bold flex-shrink-0 group-hover/step:scale-110 transition-transform">
                     {index + 1}
                   </div>
-                  <p className="text-brand-text font-medium pt-1">{step}</p>
+                  <p className="text-brand-text font-medium pt-2 text-lg group-hover/step:text-brand-accent transition-colors">{step}</p>
                 </div>
               ))}
             </div>
             
             <Link
               to="/contact"
-              className="w-full mt-12 py-4 bg-brand-accent text-brand-bg font-bold rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(255,106,61,0.4)] transition-all active:scale-[0.98]"
+              className="group/btn w-full mt-16 py-6 bg-brand-accent text-brand-bg font-bold rounded-2xl flex items-center justify-center gap-3 hover:shadow-[0_0_50px_rgba(255,106,61,0.5)] transition-all active:scale-[0.98] text-xl"
             >
-              Get Started <ArrowRight className="w-5 h-5" />
+              Get Started <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>

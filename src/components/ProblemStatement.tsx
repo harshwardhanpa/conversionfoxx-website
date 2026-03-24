@@ -46,13 +46,13 @@ export default function ProblemStatement() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 glass-card"
+              className="p-8 glass-card glass-card-hover group"
             >
-              <div className="w-12 h-12 rounded-lg bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6">
+              <div className="w-12 h-12 rounded-lg bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform">
                 <problem.icon className="w-6 h-6" />
               </div>
-              <h4 className="text-2xl font-display font-bold mb-4">{problem.title}</h4>
-              <p className="text-brand-muted leading-relaxed">{problem.description}</p>
+              <h4 className="text-2xl font-display font-bold mb-4 group-hover:text-brand-accent transition-colors">{problem.title}</h4>
+              <p className="text-brand-muted leading-relaxed text-sm md:text-base">{problem.description}</p>
             </motion.div>
           ))}
         </div>

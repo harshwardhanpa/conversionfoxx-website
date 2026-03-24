@@ -43,7 +43,7 @@ export default function ProblemSection() {
                   viewport={{ once: true }}
                   className="flex gap-6"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent">
                     <problem.icon className="w-6 h-6" />
                   </div>
                   <div>

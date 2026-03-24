@@ -18,10 +18,18 @@ export default function Footer() {
               The Growth Systems Company. We don't just market; we build high-performance revenue engines for the next generation of industry leaders.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 glass-card hover:text-brand-accent"><Twitter className="w-5 h-5" /></a>
-              <a href="#" className="p-2 glass-card hover:text-brand-accent"><Linkedin className="w-5 h-5" /></a>
-              <a href="#" className="p-2 glass-card hover:text-brand-accent"><Github className="w-5 h-5" /></a>
-              <a href="#" className="p-2 glass-card hover:text-brand-accent"><Mail className="w-5 h-5" /></a>
+              <a href="#" className="p-3 glass-card glass-card-hover text-brand-muted hover:text-brand-accent transition-all">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="p-3 glass-card glass-card-hover text-brand-muted hover:text-brand-accent transition-all">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="p-3 glass-card glass-card-hover text-brand-muted hover:text-brand-accent transition-all">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="#" className="p-3 glass-card glass-card-hover text-brand-muted hover:text-brand-accent transition-all">
+                <Mail className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
